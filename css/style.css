@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Oswald:400,500,600,700|Fugaz+One');
+
+
+:root {
+    --color-texto: #333;
+    --color-fondo: #F1F3F4;
+    --color-modulos: white;
+    --color-principal: #ff9685; 
+    
+  --color-aux: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    background-color: var(--color-fondo);
+    
+
+    padding: 0;
+    margin-top: 0;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+}
+h1, h2, h3, h4{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+header h1{
+   
+    font-family: 'Fugaz One', cursive;
+    font-size: 5rem;
+    color: var(--color-principal);
+    text-align: center;
+
+
+}
+header h1 span
+{
+    display: block;
+    text-align: center;
+}
+header h3{
+   
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: fixed;
+    top: 0.9rem;
+    left: 1rem;
+    z-index: 2;
+    color: white;
+}
+
+h1, h2{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 1rem;
+    color: var(--color-principal);
+
+}
+ 
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    margin-bottom: 33px;
+    line-height: inherit;
+    width: 80%;
+    border: 1px solid var(--color-principal);
+    border-radius: 28px;
+    padding-left: 20px;}
+
+button[type=submit] {
+        cursor: pointer;
+        width: 70px;
+        height: 70px;
+        border-color: var(--color-modulos);
+        border-radius: 124px;
+        background-color: var(--color-principal);
+        color: var(--color-modulos);
+        text-transform: uppercase;
+        padding-left: 10px;
+    }    
+
+
+
+
+
+header{
+    background: grey url(./images/bg4.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+header::after 
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-aux);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+header figure{
+
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    z-index: 2;
+}
+
+
+.pullUp{
+	animation-name: pullUp;
+	-webkit-animation-name: pullUp;	
+
+	animation-duration: 3s;	
+	-webkit-animation-duration: 3s;
+
+	animation-timing-function: ease-out;	
+	-webkit-animation-timing-function: ease-out;	
+
+	transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	-webkit-transform-origin: 50% 100%; 		
+}
+
+@keyframes pullUp {
+	0% {
+		transform: scaleY(0.1);
+	}
+	40% {
+		transform: scaleY(1.02);
+	}
+	60% {
+		transform: scaleY(0.98);
+	}
+	80% {
+		transform: scaleY(1.01);
+	}
+	100% {
+		transform: scaleY(0.98);
+	}				
+	80% {
+		transform: scaleY(1.01);
+	}
+	100% {
+		transform: scaleY(1);
+	}							
+}
+
+@-webkit-keyframes pullUp {
+	0% {
+		-webkit-transform: scaleY(0.1);
+	}
+	40% {
+		-webkit-transform: scaleY(1.02);
+	}
+	60% {
+		-webkit-transform: scaleY(0.98);
+	}
+	80% {
+		-webkit-transform: scaleY(1.01);
+	}
+	100% {
+		-webkit-transform: scaleY(0.98);
+	}				
+	80% {
+		-webkit-transform: scaleY(1.01);
+	}
+	100% {
+		-webkit-transform: scaleY(1);
+	}		
+}
+
+
+
+header label {
+
+    display: block;
+    background: var(--color-principal);
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    z-index: 400;
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+
+header label:hover{
+    cursor: pointer;
+}
+
+#btn-menu{
+    display: none;
+}
+
+
+
+
+.menu{
+    position: fixed;
+    top: 51px;
+    left: 0;
+    z-index: 3;
+    width: 70%;
+    background: var(--color-principal);
+    margin-left: -100%;
+    transition: all 0.5s;
+}
+
+
+
+.menu ul {
+    margin:0;
+    list-style: none;
+    padding: 0;
+    flex-direction: column;
+
+}
+
+.menu li{
+    flex-grow: 1;
+    text-align: center;
+    border-top: 1px solid white;
+
+
+}
+
+.menu li:hover{
+    background: #f15364;
+}
+
+.menu li a {
+    display:block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+#btn-menu:checked ~.menu{
+    margin: 0;
+    }
+
+
+
+
+
+
+
+
+
+.wrap{
+    display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 1rem;
+  justify-content: space-around;
+    
+}
+
+.bio p{
+    line-height: 1.5rem;
+    margin-bottom: 0.6rem;
+    
+}
+
+figcaption{
+    text-align: center;
+    color: var(--color-principal);
+    margin: 0.6rem;
+}
+
+time{
+    color: var(--color-principal);
+    font-weight: bold;
+    margin-left: 0.6rem; 
+}
+
+#experiencia .wrap{
+    align-items: flex-start;
+
+}
+
+#estudios{
+    background-image: url(./images/bgg2.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding-top: 0.5rem;
+
+}
+
+#experiencia{
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding-top: 0.5rem;
+}
+
+
+.cube{
+width: 100%;
+background-color:var( --color-modulos);
+padding-bottom: 0.5rem;
+margin-bottom: 2rem;
+box-shadow: 2px 2px 3px #eee;
+-webkit-box-shadow: 2px 2px 3px #eee;
+-moz-box-shadow: 2px 2px 3px #eee;
+}
+.cube p {
+    margin: 0.6rem;
+    line-height: 1.5rem;
+}
+.job_position{
+    font-weight: 700;
+}
+.cube span{
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+
+    padding: 0.6rem;
+    background-color: var(--color-principal);
+    color: white;
+    font-weight: 500;
+   
+
+    
+
+}
+
+
+
+figure img{
+  width: 100%;
+  height: auto;
+
+    
+}
+
+
+
+#estudios span{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    display: block;
+}
+
+#quien-soy article{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    
+}
+
+
+
+
+  #contacto{
+    background-image: url(./images/coral2.png); 
+    background-repeat: repeat;
+    background-attachment: fixed;
+    padding-top: 0.5rem;
+      text-align: center;
+      line-height: 39px;}
+
+
+label{
+    display: block;
+    color: var(--color-principal);
+    font-size: 1.2rem;
+
+}
+
+iframe{
+    width: 100%;
+}
+
+footer{
+    background-color: var(--color-principal);
+    padding: 1rem;
+}
+
+.social{
+    text-align: center;
+}
+.social li{
+    display: inline;
+}
+.social ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.social a {
+    color: inherit;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 3rem;
+    color: #d06351;
+}
+
+footer address{
+    text-align: center;
+    color: var(--color-modulos)
+}
+
+
+
+
+@media screen and (min-width: 700px) { 
+    .cube, .bio, #quien-soy figure {
+        width: 47%;
+
+    }
+    button, input, select, textarea {
+        width: 50%;
+    }
+
+    header figure{
+
+        width: 50%;
+    }
+   
+    footer address{
+        text-align: right;
+       
+    }
+
+    header label {
+        display: none;
+    }
+
+    .menu {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        margin-left: 0px;
+
+    }
+
+    .menu ul{
+        display: flex;
+        flex-direction: row;
+
+
+    }
+
+    .menu li {
+        border-right: 1px, solid white;
+        border-top: none;
+    }
+
+  
+
+ 
+
+
+ }
+
+
+
+ @media screen and (min-width: 900px) { 
+    #experiencia .cube{
+        width: 23%;
+
+    }
+
+    #estudios .cube{
+       width: 18%;
+    }
+
+    header figure{
+
+        width: 40%;
+    }
+
+    /*Ipad*/
+.ipad-wrapper{  max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;}
+
+
+.iPad {
+    margin: 1rem 0;
+    background: #fff;
+    position: relative;
+    display: block;
+    clear: both;
+text-align: center;
+    border: 1px solid var(--color-principal);
+    width: 100%;
+    padding: 35px 100px;
+    max-width: 1238px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+    .iPad:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 43px;
+    display: block;
+    background: #fff;
+    margin: -7px auto 0;
+    height: 14px;
+    width: 14px;
+border: 1px solid var(--color-principal);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+
+.iPad span {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    display: block;
+    background: #fff;
+    margin: -25px auto 0;
+    height: 50px;
+    width: 50px;
+    border: 1px solid var(--color-principal);
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+  }
+
+  .iPad iframe{
+      width: 100%;
+      height: 500px;
+  }
+
+    
+ }
+
+
